@@ -1,0 +1,13 @@
+services:
+  rstudio:
+    build:
+      context: . # Dockerfileが存在するディレクトリを指定
+      dockerfile: Dockerfile
+    container_name: rstudio
+    ports:
+      - "8787:8787"
+    environment:
+      PASSWORD: pokemonda
+      TZ: Asia/Tokyo
+    volumes:
+      - ./R:/home/rstudio
